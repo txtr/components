@@ -1,0 +1,21 @@
+name: MPI CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install mpich
+      run: sudo apt install -y mpich
+    - name: run
+      run: make run
+    - name: clean
+      run: make clean
