@@ -16,6 +16,6 @@ jobs:
     - name: install mpich
       run: sudo apt install -y mpich
     - name: run
-      run: make run
+      run: make -f ./makefile
     - name: clean
       run: make clean
