@@ -1,10 +1,9 @@
-EXECS=components.out
+EXECS=components
 
-components.out: main.c
-	mpicc -o components.out main.c
+all: ${EXECS}
 
-run: components.out
-	mpirun -n 2 ${PWD}/components.out
+components: main.c
+    mpicc -o components main.c
 
 clean:
-	rm -f ${EXECS}
+    rm ${EXECS}
